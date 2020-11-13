@@ -1,1 +1,1 @@
-Python Django
+Web Development Python with Django
