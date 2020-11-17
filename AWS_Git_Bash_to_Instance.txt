@@ -1,0 +1,60 @@
+Configure Instance AWS- EC2
+AWS -> Associate elastic ip 
+Modify Security Group -> Enable port 80 & 22 	
+
+Create requirements file from local -> pip freeze > requirements.txt
+
+local git bash to instance-  ssh ec2-user@(Dns server ip address) -i My-Django.pem
+Git Install -> sudo yum upgrade- sudo yum install git -> git --version
+Check python version EC2 -> Python --version
+Create folder - > mkdir python_projects
+go to folder -> cd python_projects/
+
+Step 1 – Prerequaities
+This Python installation required the GCC compiler on your system. 
+SSH command-> sudo yum install gcc openssl-devel bzip2-devel libffi-devel
+
+
+login as root user -> sudo su -
+
+install python 3.8.5 fisrt by this command - wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+tar -xzvf Python-3.8.5.tgz
+cd Python-3.8.5/
+which python
+
+The two commands below will install the files.
+sudo ./configure --enable-shared
+sudo make altinstall
+python3.8
+
+./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+make altinstall
+
+I've installed Pip in python3.8 bellow stepts
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+chmod a+x get-pip.py
+Intall pip - > python3.8 get-pip.py
+which pip
+pip --version
+
+pip install virtualenv
+Virtual environment create -> virtualenv django_env -p $(which python3.8)
+activate virtual environment - >  source django_env/bin/activate
+
+yum install git
+git clone https://github.com/NilufaYeasmin/AWS_Python_Django_Web_App.git
+
+cd AWS_Python_Django_Web_App
+pip install -r requirements.txt
+
+
+see the running process - > ps -ef | grep python
+kill -9 15254
+
+Ip tables
+sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+
+python manage.py runserver 0:8080
+
