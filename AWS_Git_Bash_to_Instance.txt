@@ -1,8 +1,7 @@
-Configure Instance AWS- EC2
-AWS -> Associate elastic ip 
-Modify Security Group -> Enable port 80 & 22 	
+AWS-> Configure Instance AWS- EC2 -> Associate elastic ip -> Modify Security Group -> Enable port 80 & 22 	
 
 Create requirements file from local -> pip freeze > requirements.txt
+                                       pip install -r requirements.txt
 
 local git bash to instance-  ssh ec2-user@(Dns server ip address) -i My-Django.pem
 Git Install -> sudo yum upgrade- sudo yum install git -> git --version
@@ -13,7 +12,6 @@ go to folder -> cd python_projects/
 Step 1 – Prerequaities
 This Python installation required the GCC compiler on your system. 
 SSH command-> sudo yum install gcc openssl-devel bzip2-devel libffi-devel
-
 
 login as root user -> sudo su -
 
