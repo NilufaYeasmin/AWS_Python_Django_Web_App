@@ -1,1 +1,1 @@
-Web Development Python with Django
+Web Development Python with Django in AWS environment
